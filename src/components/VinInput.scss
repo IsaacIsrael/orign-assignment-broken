@@ -1,12 +1,27 @@
 $color: #ff9393;
 .VinInput {
     display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
     input {
         border-radius: 5px;
         caret-color: #1056ad;
+        width: 100%;
+        font-size: 1em;
+        background-color: #F2F2F2;
+        border: none;
+        text-indent: 0.3em;
+
+        &.error{
+          border: 1px solid #ff9393;
+        }
     }
     &__Error {
         color: $color;
+        font-size: x-small;
+    }
+    &.error{
+      margin-bottom: 1px;
     }
 }
 
