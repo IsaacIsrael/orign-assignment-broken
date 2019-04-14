@@ -56,7 +56,15 @@ h3 {
     body {
         font-size: 18px;
     }
+    #app{
+      &> div{
+        width:90%;
+      }
+    }
     h3 {
         font-size: .8em;
+    }
+    button {
+      font-size: 1.2em;
     }
 }

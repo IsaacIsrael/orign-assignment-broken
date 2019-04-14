@@ -32,3 +32,11 @@ $color: #ff9393;
 *:focus {
     outline: none;
 }
+
+@media (max-width: 600px) {
+  .VinInput {
+    input {
+      font-size: 1.6em;
+    }
+  }
+}
