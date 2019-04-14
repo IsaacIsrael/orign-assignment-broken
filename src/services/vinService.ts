@@ -20,7 +20,7 @@ export const filter = (vin: string) =>
 export const validate = (_vin: string): string =>
     _vin.length !== validateLenght ? `${validateLenght} chars expected` : ""
 
-const isResultEmpty = (result: VinCheckResponse): boolean => !result || !result.Results || result.Results.length == 0
+const isResultEmpty = (result: VinCheckResponse): boolean => !result || !result.Results || result.Results.length === 0
 
 export const convert = (_res: VinCheckResponse): CarInfo => {
     if (isResultEmpty(_res)) {
@@ -41,9 +41,5 @@ export const convert = (_res: VinCheckResponse): CarInfo => {
 }
 
 export const apiCheck = async (_vin: string): Promise<CarInfo> => {
-    try {
-        return convert((await get(`${apiURL}DecodeVin/${_vin}?format=json`)) as VinCheckResponse)
-    } catch (error) {
-        new Error(error)
-    }
+    return convert((await get(`${apiURL}DecodeVin/${_vin}?format=json`)) as VinCheckResponse)
 }
